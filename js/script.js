@@ -1,8 +1,9 @@
 // Descrizione:
 // Un alert() espone 5 numeri generati casualmente.
 
+
 for (var i = 0; i < 5; i ++){
-    random,push= Math.floor(Math.random() * 5 + 1);
+    random= Math.floor(Math.random() * 5 + 1);
     alert (random);
 }
 
@@ -11,7 +12,7 @@ for (var i = 0; i < 5; i ++){
 var timer = 0;
 var clock;
 
-function(cronometro){
+function cronometro (){
 
     clock = setInterval(function(){
         document.getElementById('cronometro').innerHTML = ++timer;     

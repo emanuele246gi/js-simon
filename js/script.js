@@ -12,10 +12,10 @@ for (var i = 0; i < 5; i ++){
 var timer = 0;
 var clock;
 
-function cronometro (){
+function cronometro(){
 
     clock = setInterval(function(){
-        document.getElementById('cronometro').innerHTML = ++timer;     
+        document.getElementById('cronometro').innerHTML += ++timer;     
     }, 1000);
 
 };
@@ -23,12 +23,10 @@ function cronometro (){
 // Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 
 if (timer == 30){
-    var prompt = parseInt(prompt('Inserisci i numeri visti precedentemente'));
+    for (var i = 0; i < 5; i ++){
+    var prompt = parseInt(prompt('Inserisci i numeri visti precedentemente'))};
 }
 
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
-// Consigli del giorno:
-// Pensate prima in italiano.
-// Dividete in piccoli problemi la consegna.
-// Individuate gli elementi di cui avete bisogno per realizzare il programma.
+
 

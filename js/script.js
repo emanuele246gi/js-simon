@@ -1,32 +1,61 @@
 // Descrizione:
 // Un alert() espone 5 numeri generati casualmente.
 
+var randomNumbers = [];
+var numeri = 5;
 
-for (var i = 0; i < 5; i ++){
-    random= Math.floor(Math.random() * 5 + 1);
-    alert (random);
+while(randomNumbers.length < 5){
+    var numeroRandom = numeriRandom(1,100);
+    console.log(numeroRandom);
+
+    if(!randomNumbers.includes(numeroRandom)){
+        randomNumbers.push(numeroRandom);
+    }
+
+}
+
+console.log(randomNumbers);
+
+alert(randomNumbers);
+
+function numeriRandom(min,max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 // Da li parte un timer di 30 secondi.
 
-var timer = 0;
-var clock;
+setTimeout(inserisciNumeri, 3000);
 
-function cronometro(){
+function inserisciNumeri(){
 
-    clock = setInterval(function(){
-        document.getElementById('cronometro').innerHTML += ++timer;     
-    }, 1000);
+    var risultato = indovinaNumeri(randomNumbers);
+    console.log(risultato);
 
-};
+    if(risultato.length == 0){
+        console.log('Non hai indovinato alcun numero');
+    } else {
+        console.log('hai indovinato ' + risultato.length + ' numeri e sono: ' + risultato);
+    }
+}
 
 // Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 
-if (timer == 30){
+function indovinaNumeri(arrayRandom){
+    var users = [];
     for (var i = 0; i < 5; i ++){
-    var prompt = parseInt(prompt('Inserisci i numeri visti precedentemente'))};
+        var numeroUtente = parseInt(prompt('Digita un numero'));
+
+        if(arrayRandom.includes (numeroRandom) && !users.includes(numeroUtente)){
+            users.push(numeroUtente);
+        }
+
+    }
+    return users;
+
 }
 
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
-
+function numeriRandom(min,max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
